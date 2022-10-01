@@ -355,12 +355,12 @@ angular.module('docs',
         }
       }
     })
-    .state('document.view.rating', {
-      url: '/rating',
+    .state('document.view.scores', {
+      url: '/scores',
       views: {
         'tab': {
-          templateUrl: 'partial/docs/document.view.rating.html',
-          controller: 'DocumentViewRating'
+          templateUrl: 'partial/docs/document.view.scores.html',
+          controller: 'DocumentViewScores'
         }
       }
     })
