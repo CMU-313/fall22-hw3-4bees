@@ -355,6 +355,15 @@ angular.module('docs',
         }
       }
     })
+    .state('document.view.rating', {
+      url: '/rating',
+      views: {
+        'tab': {
+          templateUrl: 'partial/docs/document.view.rating.html',
+          controller: 'DocumentViewRating'
+        }
+      }
+    })
     .state('login', {
       url: '/login?redirectState&redirectParams',
       views: {
