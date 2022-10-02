@@ -1,6 +1,6 @@
 package com.sismics.docs.core.model.jpa;
 
-// import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,9 +11,6 @@ import java.util.Date;
 /**
  * Score entity.
  */
-
-// create cached table T_SCORE ( SCORE_ID_C varchar(36) not null, SCORE_IDDOC_C varchar(36) not null, SCORE_IDUSER_C varchar(36) not null, SCORE_SKILLS_C int, SCORE_EXPERIENCE_C int, SCORE_TRANSCRIPTGPA_C int, SCORE_MATCH_C int, SCORE_CREATEDATE_D datetime, primary key (SCORE_ID_C) );
-
 
 @Entity
 @Table(name = "T_SCORE")
