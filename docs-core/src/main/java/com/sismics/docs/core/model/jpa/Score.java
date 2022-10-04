@@ -1,6 +1,6 @@
 package com.sismics.docs.core.model.jpa;
 
-import com.google.common.base.MoreObjects;
+// import com.google.common.base.MoreObjects; 
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +14,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "T_SCORE")
-public class Score {
+public class Score implements Loggable {
     /**
      * Score ID.
      */
@@ -64,6 +64,12 @@ public class Score {
     @Column(name = "SCORE_CREATEDATE_D", nullable = false)
     private Date createDate;
 
+    /**
+     * Deletion date.
+     */
+    @Column(name = "SCORE_DELETEDATE_D")
+    private Date deleteDate;
+
     public String getId() {
         return id;
     }
@@ -96,7 +102,7 @@ public class Score {
         this.skills = Integer.parseInt(skills);
     }
 
-    public int setExperienceScore() {
+    public int getExperienceScore() {
         return experience;
     }
 
@@ -126,6 +132,20 @@ public class Score {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    @Override
+    public Date getDeleteDate() {
+        return deleteDate;
+    }
+
+    public void setDeleteDate(Date deleteDate) {
+        this.deleteDate = deleteDate;
+    }
+
+    @Override // Uncertain about its usage, but required for loggable
+    public String toMessage() {
+        return documentId;
     }
 
     // For dashboard: create function for total score
