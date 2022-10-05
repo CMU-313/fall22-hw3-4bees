@@ -148,21 +148,19 @@ public class ScoreResource extends BaseResource {
         ScoreDao scoreDao = new ScoreDao();
         List<ScoreDto> scoreDtoList = scoreDao.getByDocumentId(documentId);
         JsonArrayBuilder scores = Json.createArrayBuilder();
-        for (ScoreDto scoreDto : scoreDtoList) {
-            scores.add(Json.createObjectBuilder()
-                    .add("id", scoreDto.getId())
-                    .add("documentId", scoreDto.getDocumentId())
-                    .add("skills", scoreDto.getSkills())
-                    .add("experience", scoreDto.getExperience())
-                    .add("transcriptGPA", scoreDto.getTranscriptGPA())
-                    .add("match", scoreDto.getMatch())
-                    .add("create_date", scoreDto.getCreateTimestamp()));
-            System.out.println(scoreDto.getId());
-            System.out.println(scoreDto.getDocumentId());
-            System.out.println(scoreDto.getSkills());
+        
+        Integer l = scoreDtoList.size();
+        ScoreDto scoreDto = scoreDtoList.get(l-1);
 
-
-        }
+        scores.add(Json.createObjectBuilder()
+                .add("id", scoreDto.getId())
+                .add("documentId", scoreDto.getDocumentId())
+                .add("skills", scoreDto.getSkills())
+                .add("experience", scoreDto.getExperience())
+                .add("transcriptGPA", scoreDto.getTranscriptGPA())
+                .add("match", scoreDto.getMatch())
+                .add("create_date", scoreDto.getCreateTimestamp()));
+        
         
         // Always return OK
         JsonObjectBuilder response = Json.createObjectBuilder()
