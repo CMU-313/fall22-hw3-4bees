@@ -46,7 +46,7 @@ public class ScoreDao {
      */
     public List<ScoreDto> getByDocumentId(String documentId) {
         EntityManager em = ThreadLocalContext.get().getEntityManager();
-        StringBuilder sb = new StringBuilder("select s.SCORE_ID_C, s.SCORE_SKILLS_C, s.SCORE_EXPERIENCE_C, s.SCORE_TRANSCRIPTGPA_C, SCORE_MATCH_C, SCORE_CREATEDATE_D from T_SCORE c");
+        StringBuilder sb = new StringBuilder("select s.SCORE_ID_C, s.SCORE_SKILLS_C, s.SCORE_EXPERIENCE_C, s.SCORE_TRANSCRIPTGPA_C, s.SCORE_MATCH_C, s.SCORE_CREATEDATE_D from T_SCORE s");
         sb.append(" where s.SCORE_IDDOC_C = :documentId and s.SCORE_DELETEDATE_D is null ");
         sb.append(" order by s.SCORE_CREATEDATE_D asc ");
         Query q = em.createNativeQuery(sb.toString());
