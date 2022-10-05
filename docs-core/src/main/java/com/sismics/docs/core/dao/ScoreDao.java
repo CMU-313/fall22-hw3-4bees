@@ -59,10 +59,10 @@ public class ScoreDao {
             int i = 0;
             ScoreDto scoreDto = new ScoreDto();
             scoreDto.setId((String) o[i++]);
-            scoreDto.setSkills((String) o[i++]);
-            scoreDto.setExperience((String) o[i++]);
-            scoreDto.setTranscriptGpa((String) o[i++]);
-            scoreDto.setMatch((String) o[i++]);
+            scoreDto.setSkills(o[i++].toString());
+            scoreDto.setExperience(o[i++].toString());
+            scoreDto.setTranscriptGpa(o[i++].toString());
+            scoreDto.setMatch((String) o[i++].toString());
             scoreDto.setCreateTimestamp(((Timestamp) o[i++]).getTime());
             scoreDtoList.add(scoreDto);
         }

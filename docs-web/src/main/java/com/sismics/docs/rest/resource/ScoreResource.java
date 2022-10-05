@@ -102,7 +102,9 @@ public class ScoreResource extends BaseResource {
                 .add("skills", score.getSkillsScore())
                 .add("experience", score.getExperienceScore())
                 .add("transcript_gpa", score.getTranscriptGPAScore())
+                .add("match", score.getMatchScore())
                 .add("create_date", score.getCreateDate().getTime());
+
                 // .add("total_score", score.getTotalScore());
         return Response.ok().entity(response.build()).build();
     }
@@ -155,7 +157,11 @@ public class ScoreResource extends BaseResource {
                     .add("transcriptGPA", scoreDto.getTranscriptGPA())
                     .add("match", scoreDto.getMatch())
                     .add("create_date", scoreDto.getCreateTimestamp()));
-            
+            System.out.println(scoreDto.getId());
+            System.out.println(scoreDto.getDocumentId());
+            System.out.println(scoreDto.getSkills());
+
+
         }
         
         // Always return OK
