@@ -1,7 +1,7 @@
 <span class="fas fa-circle-notch fa-spin" ng-show="!document && isEdit()"></span>
 
 <div ng-show="document || !isEdit()">
-  <form name="documentForm" class="form-horizontal">
+  <form name="documentForm" class="form-horizontal" ng-submit="addScores()">
     <div class="pull-right btn-group" ng-init="form = documentForm">
       <button type="submit" class="btn btn-primary" ng-disabled="!documentForm.$valid || fileIsUploading" ng-click="edit()">
         <span class="fas fa-save"></span>
@@ -199,7 +199,7 @@
 
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary" ng-disabled="!documentForm.$valid || fileIsUploading" ng-click="edit()">
+        <button type="submit" class="btn btn-primary" ng-disabled="!documentForm.$valid || fileIsUploading" ng-click="addScores()">
           <span class="fas fa-save"></span>
           {{ 'save' | translate }}
         </button>

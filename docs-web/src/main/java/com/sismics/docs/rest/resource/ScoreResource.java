@@ -20,7 +20,7 @@ import java.util.Date;
  * @author bgamard
  */
 
-@Path("/score")
+@Path("/scores")
 public class ScoreResource extends BaseResource {
     /**
      * Add a score.
@@ -49,20 +49,25 @@ public class ScoreResource extends BaseResource {
      * @param createDateStr Creation date
      * @return Response
      */
-    @PUT
+    /**@POST
+    *@Path ("")
+     */
+
+    @POST
+    @Path ("scores")
     public Response add(
-            @FormParam("id") String documentId,
+            @FormParam("documentId") String documentId,
             @FormParam("skills") String skills,
             @FormParam("experience") String experience,
-            @FormParam("transcript_gpa") String transcriptGPA,
+            @FormParam("transcriptGPA") String transcriptGPA,
             @FormParam("match") String match,
-            @FormParam("create_date") String createDateStr) {
+            @FormParam("createDateStr") String createDateStr) {
         if (!authenticate()) {
             throw new ForbiddenClientException();
         }
         
         // Validate input data
-        documentId = ValidationUtil.validateLength(documentId, "id", 1, 1, false);
+        documentId = ValidationUtil.validateLength(documentId, "document", 1, null, false);
         skills = ValidationUtil.validateLength(skills, "skills", 1, 1, false);
         experience = ValidationUtil.validateLength(experience, "experience", 1, 1, false);
         transcriptGPA = ValidationUtil.validateLength(transcriptGPA, "transcript_gpaa", 1, 1, false);

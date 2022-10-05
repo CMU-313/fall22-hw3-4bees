@@ -1,11 +1,11 @@
 <!-- Primarily adapted from directive.acledit.html-->
-<div>
+<div ng-controller="DocumentViewScores">
     <form name="documentForm" class="form-horizontal">
     <h4>Input score rating for each criteria (out of 5)</h4><br>
     <div class="form-group">
         <label class=" col-sm control-label" for="inputPermission">Skills</label>
         <div class="col-sm">
-        <select class="form-control" ng-model="acl.perm" id="inputPermission">
+        <select class="form-control" ng-model="skills" id="inputPermission">
             <!--- Original source (directive.acledit.html) pulls option values from en.json -->
             <option value="0">0</option>
             <option value="1">1</option>
@@ -20,7 +20,7 @@
     <div class="form-group">
         <label class=" col-sm control-label" for="inputPermission">Experience</label>
         <div class="col-sm">
-        <select class="form-control" ng-model="acl.perm" id="inputPermission">
+        <select class="form-control" ng-model="experience" id="inputPermission">
             <!--- Original source (directive.acledit.html) pulls option values from en.json -->
             <option value="0">0</option>
             <option value="1">1</option>
@@ -35,7 +35,7 @@
     <div class="form-group">
         <label class=" col-sm control-label" for="inputPermission">Transcript & GPA</label>
         <div class="col-sm">
-        <select class="form-control" ng-model="acl.perm" id="inputPermission">
+        <select class="form-control" ng-model="transcriptGPA" id="inputPermission">
             <!--- Original source (directive.acledit.html) pulls option values from en.json -->
             <option value="0">0</option>
             <option value="1">1</option>
@@ -50,7 +50,7 @@
     <div class="form-group">
         <label class=" col-sm control-label" for="inputPermission">Match with College</label>
         <div class="col-sm">
-        <select class="form-control" ng-model="acl.perm" id="inputPermission">
+        <select class="form-control" ng-model="match" id="inputPermission">
             <!--- Original source (directive.acledit.html) pulls option values from en.json -->
             <option value="0">0</option>
             <option value="1">1</option>
@@ -65,7 +65,7 @@
     <!-- Save button form taken from document.edit.html-->
     <div class="form-group">
         
-        <button type="submit" class="btn btn-primary" ng-click="edit()">
+        <button type="submit" class="btn btn-primary" ng-click="addScores()">
         <span class="fas fa-save"></span>
         Save
         </button>
