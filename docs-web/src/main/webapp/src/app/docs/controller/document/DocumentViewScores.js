@@ -5,6 +5,12 @@
  * Adapted from DocumentView.js
  */
 angular.module('docs').controller('DocumentViewScores', function ($scope, $stateParams, Restangular) {
+
+    // Load comments from server
+    Restangular.one('scores', $stateParams.id).get().then(function (data) {
+      $scope.scores = data.scores;
+    });
+
   /**
    * Add the entered scores 
    */
@@ -20,6 +26,5 @@ angular.module('docs').controller('DocumentViewScores', function ($scope, $state
     })
 
   };
-
 
 });
