@@ -11,7 +11,7 @@ Teedy is an open source, lightweight document management system for individuals 
 ![New!](https://teedy.io/img/laptop-demo.png?20180301)
 
 # Features
-
+- [Scores tab](https://github.com/CMU-313/fall22-hw3-4bees/blob/main/ScoreREADME.md) for evaluating documents ![New!](https://www.sismics.com/public/img/new.png)
 - Responsive user interface
 - Optical character recognition
 - LDAP authentication ![New!](https://www.sismics.com/public/img/new.png)
